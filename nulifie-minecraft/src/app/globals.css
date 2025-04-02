@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 276 83% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 88% 60%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 355 78% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 276 83% 60%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-br from-[#0c0c0c] to-[#1a1018];
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-black/30 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+
+  .glassmorphism-light {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-md;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-[#ff575f] to-[#ff7e5f] text-white font-medium;
+  }
+
+  .nav-item {
+    @apply px-4 py-2 transition-all duration-200 hover:text-white/90 font-medium relative;
+  }
+
+  .nav-item::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-[2px] bg-white/70 transition-all duration-300;
+  }
+
+  .nav-item:hover::after {
+    @apply w-full;
+  }
+}
